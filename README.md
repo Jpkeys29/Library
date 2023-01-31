@@ -1,2 +1,2 @@
 # Library
-Library using Django
+Library application using Django
