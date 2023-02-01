@@ -29,7 +29,7 @@ class Book(models.Model):
 
     #To access the record for an specific book. It returns an url:
     def get_absolute_url(self):
-        return reverse('book_detail',kwargs={"pk":self.pk})
+        return reverse('book_detail',kwargs={"pk":"self.pk"})
 
 
 class Author(models.Model):
@@ -43,7 +43,7 @@ class Author(models.Model):
     
     #To grab the url for the author:
     def get_absolute_url(self):
-        return reverse('author_detail',kwargs={'pk:self.pk'})
+        return reverse('author_detail',kwargs={'pk':'self.pk'})
 
     def __str__(self):
         return f"{self.last_name} , {self.first_name}"
