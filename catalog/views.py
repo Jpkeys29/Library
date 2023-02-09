@@ -2,7 +2,7 @@ from django.shortcuts import render
 #To return a simple "It's working" import HttpResponse
 from django.http import HttpResponse
 from .models import Book,Author,BookInstance,Genre,Language
-from django.views.generic import CreateView,DetailView
+from django.views.generic import CreateView, DetailView
 
 
 # Create your views here.
@@ -27,6 +27,9 @@ class BookCreate(CreateView): #model_form.html
     model = Book #connects to the Book model
     fields = '__all__'
 
-#Creating a DetailView of the book so that it redirects to book_detail.html after submitting the form 
 class BookDetail(DetailView):
     model = Book
+
+
+
+
