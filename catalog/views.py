@@ -2,12 +2,12 @@ from django.shortcuts import render
 #To return a simple "It's working" import HttpResponse
 from django.http import HttpResponse
 from .models import Book,Author,BookInstance,Genre,Language
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, ListView
 
 
 # Create your views here.
 def index(request):
-    #Number of books
+    #Number of books(titles)
     num_books = Book.objects.all().count()
     #Number of actual copies
     num_instances = BookInstance.objects.all().count()
@@ -31,5 +31,10 @@ class BookDetail(DetailView):
     model = Book
 
 
+
+class BookList(ListView):
+    model = Book
+    field = '__all__'
+    
 
 

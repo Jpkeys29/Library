@@ -18,9 +18,8 @@ class Book(models.Model):
     #For Book and Author to be their own models, author is not only an attribute instead is going to be to an specific author(primary key):
     author = models.ForeignKey('Author',on_delete=models.SET_NULL,null=True) #on_delete, to delete author but not the book
     summary = models.TextField(max_length=600)
-    #isbn(unique identifier for the book)
     isbn = models.CharField('ISBN', max_length=13,unique=True)
-    #To connect a book to multiple genres(Genre class)Many-to_Many:
+    #To connect a book to multiple genres(Genre class)Many-to Many:
     genre = models.ManyToManyField(Genre)
     language = models.ForeignKey('Language',on_delete=models.SET_NULL,null=True)
     
