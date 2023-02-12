@@ -46,7 +46,7 @@ class BookDelete(DeleteView):
     model = Book
     #success_url is also an attribute and represents the URL you want to go to after the form has been submitted
     # success_url is NOT a template. It is the actual URL
-    success_url = reverse_lazy('book_list')
+    success_url = reverse_lazy('index')
 
 
 

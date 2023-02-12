@@ -3,6 +3,9 @@
     {% for book in object_list %}
     <li>{{book.list}} {{book.author}} {{book.title}}</li>
     <a href="/catalog/book_delete/{{book.id}}">Delete</a>
-
     {% endfor %}
 </ul>
+<a href="{% url 'index'%}">HomePage</a>
+<div>
+    <a href="{% url 'create_book'%}">Create Book</a>
+</div>
